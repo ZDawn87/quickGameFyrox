@@ -1,0 +1,21 @@
+[package]
+name = "simple-fyrox-game"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A simple 3D game built with the Fyrox engine"
+license = "MIT"
+
+[dependencies]
+fyrox = "0.34"
+nalgebra = "0.32"
+
+# Optional: Enable optimizations for dependencies in debug mode
+[profile.dev.package."*"]
+opt-level = 2
+
+# Release profile optimizations
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
